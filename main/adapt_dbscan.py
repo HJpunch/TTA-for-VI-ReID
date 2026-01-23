@@ -295,7 +295,7 @@ def test(cfg):
                                                        num_workers=4,
                                                        )
     
-    if cfg.model == 'Baseline':
+    if cfg.model == 'resnet':
         model = Baseline(num_classes=cfg.num_id,
                         drop_last_stride=cfg.drop_last_stride,
                         triplet=cfg.triplet,
@@ -430,7 +430,7 @@ if __name__ == "__main__":
     parser.add_argument("--cfg", type=str, default="configs/softmax.yml")
     parser.add_argument('--gpu', type=str, default='0',
                         help='gpu device ids for CUDA_VISIBLE_DEVICES')
-    parser.add_argument('--model', type=str, default='Baseline', choices=['Baseline', 'IDKL', 'AGW'], help='Model to TTA')
+    parser.add_argument('--model', type=str, default='resnet', choices=['resnet', 'IDKL', 'AGW'], help='Model to TTA')
     parser.add_argument('--resume', type=str, default='', help='model checkpoint path')
     parser.add_argument('--query-set', type=str, choices=['one', 'few', 'multi'], default='multi', help='query set configuration')
     parser.add_argument('--output', type=str, default='', help='log output filename')
