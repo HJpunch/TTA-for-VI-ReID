@@ -238,7 +238,13 @@ def get_tta_test_loader(dataset, root, query_batch_size, gallery_batch_size, ima
     return gallery_loader, query_loader
 
 
-def get_edge_device_test_loader(dataset, root, query_batch_size, gallery_batch_size, image_size, num_workers=4, relabel=True):
+def get_edge_device_test_loader(dataset, 
+                                root, 
+                                query_batch_size, 
+                                gallery_batch_size, 
+                                image_size, 
+                                num_workers=4, 
+                                relabel=True,):
     # transform
     transform = T.Compose([
         T.Resize(image_size),

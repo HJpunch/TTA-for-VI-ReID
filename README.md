@@ -36,8 +36,6 @@ python -m main.train --cfg ${config} --gpu ${gpu_id} --model ${method}  --output
 ### Perform Tset-time-adaptation
 ```
 shell
-./inference/${dataset}.sh ${description} ${checkpoint}
-# e.g., sh ./inference/market.sh test model_best
 python -m main.adapt --cfg ${config} --gpu ${gpu_id} --resume ${checkpoint path} --model ${method}  --output ${log path}
 python -m main.adapt --cfg ./configs/SYSU.yml --gpu 0 --resume ./checkpoints/ckpt.pth --model resnet --output adaptation
 ```
